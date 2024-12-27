@@ -42,38 +42,18 @@ export type GetTendersRequest = BaseRequest<
 >;
 export type GetTendersResponse = Tender[];
 
-export type GetTenderRequest = BaseRequest<
-  { tenderID: number },
-  undefined,
-  undefined
->;
+export type GetTenderRequest = BaseRequest<{ tenderID: number }, undefined, undefined>;
 export type GetTenderResponse = Tender;
 
-export type CreateTenderRequest = BaseRequest<
-  undefined,
-  undefined,
-  TenderProps
->;
+export type CreateTenderRequest = BaseRequest<undefined, undefined, TenderProps>;
 export type CreateTenderResponse = Tender;
 
-export type UpdateTenderRequest = BaseRequest<
-  { tenderID: number },
-  undefined,
-  TenderProps
->;
+export type UpdateTenderRequest = BaseRequest<{ tenderID: number }, undefined, TenderProps>;
 export type UpdateTenderResponse = Tender;
 
-export type SendCommentRequest = BaseRequest<
-  { tenderID: number },
-  undefined,
-  CommentProps
->;
+export type SendCommentRequest = BaseRequest<{ tenderID: number }, undefined, CommentProps>;
 
-export type GetCommentsRequest = BaseRequest<
-  { tenderID: number },
-  undefined,
-  undefined
->;
+export type GetCommentsRequest = BaseRequest<{ tenderID: number }, undefined, undefined>;
 
 export type GetCommentsResponse = Comment[];
 
@@ -86,11 +66,7 @@ export type RespondRequest = BaseRequest<
   }
 >;
 
-export type RespondsRequest = BaseRequest<
-  { tenderID: number },
-  BaseTableRequest,
-  undefined
->;
+export type RespondsRequest = BaseRequest<{ tenderID: number }, BaseTableRequest, undefined>;
 
 export type Respond = {
   tender_id: number;
@@ -102,11 +78,7 @@ export type Respond = {
 
 export type GetRespondsResponse = Respond[];
 
-export type AdditionsRequest = BaseRequest<
-  { tenderID: number },
-  undefined,
-  undefined
->;
+export type AdditionsRequest = BaseRequest<{ tenderID: number }, undefined, undefined>;
 
 export type Addition = {
   id: number;
@@ -134,14 +106,13 @@ export type QA = {
 
 export type SendQARequest = BaseRequest<
   { tenderID: number },
-  undefined,
-  CommentProps
+  { type: "invalid" | "question" | "answer" },
+  {
+    parent_id?: number;
+    content: string;
+  }
 >;
 
-export type GetQARequest = BaseRequest<
-  { tenderID: number },
-  undefined,
-  undefined
->;
+export type GetQARequest = BaseRequest<{ tenderID: number }, undefined, undefined>;
 
 export type GetQAResponse = QA[];
