@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import { apiStore } from "../axiosConfig";
+import { apiStore } from "@/axiosConfig";
 import { BaseResponse } from "../types/base";
 import {
   UploadFileRequest,
