@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { BaseResponse } from "../types/base";
 import { CityRequest, CityResponse, CompanyRequest, CompanyResponse } from "../types/suggest";
-import { api } from "../axiosConfig";
+import { api } from "@/axiosConfig";
 
 export const apiSuggest = {
   getCompany: async function (

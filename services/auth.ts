@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { api } from "../axiosConfig";
+import { api } from "@/axiosConfig";
 import { BaseResponse } from "../types/base";
 
 import {

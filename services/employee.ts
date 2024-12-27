@@ -1,4 +1,4 @@
-import { api } from "../axiosConfig";
+import { api } from "@/axiosConfig";
 import { AxiosResponse } from "axios";
 import { BaseResponse } from "../types/base";
 import {

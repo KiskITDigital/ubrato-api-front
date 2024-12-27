@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import { BaseResponse } from "../types/base";
-import { api } from "../axiosConfig";
+import { api } from "@/axiosConfig";
 import { GetVerificationsRequest, Verification } from "../types/verifications";
 
 export const apiSuggest = {
