@@ -234,7 +234,7 @@ export type GetFavouritesRequest = BaseRequest<
 export type GetFavouritesResponse = {
   id: number;
   object_type: "organization" | "tender";
-  object: Organization | Tender;
+  object: { organization: Organization; profile: ContractorProfile } | Tender;
 }[];
 
 export type AddToFavouritesResponse = {
