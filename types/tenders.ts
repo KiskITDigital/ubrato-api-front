@@ -52,13 +52,13 @@ export type CreateTenderProps = {
   is_contract_price: boolean;
   is_nds_price: boolean;
   floor_space: number;
-  description: string;
-  wishes: string;
-  specification: string;
-  attachments: string[];
+  description?: string;
+  wishes?: string;
+  specification?: string;
+  attachments?: string[];
   services: number[];
   objects: number[];
-  is_draft: boolean;
+  is_draft?: boolean;
   reception_start: string;
   reception_end: string;
   work_start: string;
