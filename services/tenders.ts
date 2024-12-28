@@ -71,15 +71,15 @@ export const apiTenders = {
   },
 
   sendAdditions: async function (
-    props: AdditionsRequest,
+    props: SendAdditionsRequest,
   ): Promise<AxiosResponse> {
     return api.post(`/tenders/${props.query.tenderID}/additions`, props.body);
   },
 
   getAdditions: async function (
-    props: AdditionsRequest,
+    props: GetAdditionsRequest,
   ): Promise<AxiosResponse<BaseResponse<GetAdditionsResponse>>> {
-    return api.get(`/tenders/${props.query.tenderID}/additions`, props.body);
+    return api.get(`/tenders/${props.query.tenderID}/additions`);
   },
 
   postQA: async function (props: SendQARequest): Promise<AxiosResponse> {

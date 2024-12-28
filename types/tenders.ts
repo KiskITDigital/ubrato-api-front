@@ -78,7 +78,7 @@ export type Respond = {
 
 export type GetRespondsResponse = Respond[];
 
-export type AdditionsRequest = BaseRequest<
+export type SendAdditionsRequest = BaseRequest<
   { tenderID: number },
   undefined,
   {
@@ -87,6 +87,8 @@ export type AdditionsRequest = BaseRequest<
     attachments: string[];
   }
 >;
+
+export type GetAdditionsRequest = BaseRequest<{ tenderID: number }, undefined, undefined>;
 
 export type Addition = {
   id: number;
