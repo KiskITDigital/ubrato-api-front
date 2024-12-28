@@ -238,5 +238,5 @@ export type GetFavouritesResponse = {
 }[];
 
 export type AddToFavouritesResponse = {
-  object_id: number;
+  id: number;
 };
