@@ -93,7 +93,7 @@ export const apiTenders = {
 
   sendWinners: async function (
     props: SendWinnersRequest
-  ): Promise<BaseResponse<AxiosResponse<SendWinnersResponse>>> {
+  ): Promise<AxiosResponse<BaseResponse<SendWinnersResponse>>> {
     return api.post(`/tenders/${props.query.tenderID}/winners`, undefined, {
       params: props.params,
     });
