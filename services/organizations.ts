@@ -3,6 +3,7 @@ import { api } from "@/axiosConfig";
 import { BaseResponse, BaseTableResponse } from "../types/base";
 import {
   AddToFavouritesRequest,
+  AddToFavouritesResponse,
   DeletePortfolioRequest,
   GetContractorProfileRequest,
   GetContractorProfileResponse,
@@ -167,7 +168,7 @@ export const apiOrganizations = {
 
   addToFavourites: async function (
     props: AddToFavouritesRequest,
-  ): Promise<AxiosResponse> {
+  ): Promise<AxiosResponse<AddToFavouritesResponse>> {
     return api.post(
       `/organizations/${props.query.organizationID}/favourites`,
       props.body,

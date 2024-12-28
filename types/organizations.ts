@@ -39,11 +39,7 @@ export type GetOrganizationsRequest = BaseRequest<
 >;
 export type GetOrganizationsResponse = Organization[];
 
-export type GetOrganizationRequest = BaseRequest<
-  { organizationID: number },
-  undefined,
-  undefined
->;
+export type GetOrganizationRequest = BaseRequest<{ organizationID: number }, undefined, undefined>;
 export type GetOrganizationResponse = Organization;
 
 export type GetOrganizationTendersRequest = BaseRequest<
@@ -52,11 +48,7 @@ export type GetOrganizationTendersRequest = BaseRequest<
   undefined
 >;
 export type GetOrganizationTendersResponse = Tender[];
-export type GetContractorsReqest = BaseRequest<
-  undefined,
-  BaseTableRequest,
-  undefined
->;
+export type GetContractorsReqest = BaseRequest<undefined, BaseTableRequest, undefined>;
 
 export type GetContractorsResponse = GetContractorProfileResponse[];
 
@@ -207,11 +199,7 @@ export type GetPortfolioResponse = Portfolio[];
 
 export type SendPortfolioResponse = Portfolio;
 
-export type GetPortfolioRequest = BaseRequest<
-  { organizationID: number },
-  undefined,
-  undefined
->;
+export type GetPortfolioRequest = BaseRequest<{ organizationID: number }, undefined, undefined>;
 
 export type UpdatePortfolioRequest = BaseRequest<
   { portfolioID: number },
@@ -221,11 +209,7 @@ export type UpdatePortfolioRequest = BaseRequest<
 
 export type UpdatePortfolioResponse = Portfolio;
 
-export type DeletePortfolioRequest = BaseRequest<
-  { portfolioID: number },
-  undefined,
-  undefined
->;
+export type DeletePortfolioRequest = BaseRequest<{ portfolioID: number }, undefined, undefined>;
 
 export type AddToFavouritesRequest = BaseRequest<
   { organizationID: number },
@@ -252,3 +236,7 @@ export type GetFavouritesResponse = {
   object_type: "organization" | "tender";
   object: Organization | Tender;
 }[];
+
+export type AddToFavouritesResponse = {
+  object_id: number;
+};
