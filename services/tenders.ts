@@ -84,7 +84,9 @@ export const apiTenders = {
   },
 
   postQA: async function (props: SendQARequest): Promise<AxiosResponse> {
-    return api.post(`/tenders/${props.query.tenderID}/question-answer`);
+    return api.post(`/tenders/${props.query.tenderID}/question-answer`, props.body, {
+      params: props.params,
+    });
   },
 
   getQA: async function (props: GetQARequest): Promise<AxiosResponse<BaseResponse<GetQAResponse>>> {
