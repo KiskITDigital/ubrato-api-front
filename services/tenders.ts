@@ -22,6 +22,10 @@ import {
   GetAdditionsResponse,
   GetAdditionsRequest,
   SendAdditionsRequest,
+  SendWinnersRequest,
+  SendWinnersResponse,
+  GetWInnersReqest,
+  GetWinnersResponse,
 } from "../types/tenders";
 
 export const apiTenders = {
@@ -85,5 +89,19 @@ export const apiTenders = {
 
   getQA: async function (props: GetQARequest): Promise<AxiosResponse<BaseResponse<GetQAResponse>>> {
     return api.get(`/tenders/${props.query.tenderID}/question-answer`);
+  },
+
+  sendWinners: async function (
+    props: SendWinnersRequest
+  ): Promise<BaseResponse<AxiosResponse<SendWinnersResponse>>> {
+    return api.post(`/tenders/${props.query.tenderID}/winners`, undefined, {
+      params: props.params,
+    });
+  },
+
+  getWinners: async function (
+    props: GetWInnersReqest
+  ): Promise<AxiosResponse<BaseResponse<GetWinnersResponse>>> {
+    return api.get(`/tenders/${props.query.tenderID}/winners`);
   },
 };

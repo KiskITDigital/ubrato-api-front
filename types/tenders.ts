@@ -146,3 +146,20 @@ export type SendQARequest = BaseRequest<
 export type GetQARequest = BaseRequest<{ tenderID: number }, undefined, undefined>;
 
 export type GetQAResponse = QA[];
+
+export type SendWinnersRequest = BaseRequest<
+  { tenderID: number },
+  { organizationID: number },
+  undefined
+>;
+
+export type SendWinnersResponse = {
+  id: number;
+  organization: Organization;
+  tender_id: number;
+  accepted: string;
+};
+
+export type GetWInnersReqest = BaseRequest<{ tenderID: number }, undefined, undefined>;
+
+export type GetWinnersResponse = SendWinnersResponse[];
