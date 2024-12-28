@@ -45,7 +45,27 @@ export type GetTendersResponse = Tender[];
 export type GetTenderRequest = BaseRequest<{ tenderID: number }, undefined, undefined>;
 export type GetTenderResponse = Tender;
 
-export type CreateTenderRequest = BaseRequest<undefined, undefined, TenderProps>;
+export type CreateTenderProps = {
+  name: string;
+  city: number;
+  price: number;
+  is_contract_price: boolean;
+  is_nds_price: boolean;
+  floor_space: number;
+  description: string;
+  wishes: string;
+  specification: string;
+  attachments: string[];
+  services: number[];
+  objects: number[];
+  is_draft: boolean;
+  reception_start: string;
+  reception_end: string;
+  work_start: string;
+  work_end: string;
+};
+
+export type CreateTenderRequest = BaseRequest<undefined, undefined, CreateTenderProps>;
 export type CreateTenderResponse = Tender;
 
 export type UpdateTenderRequest = BaseRequest<{ tenderID: number }, undefined, TenderProps>;
