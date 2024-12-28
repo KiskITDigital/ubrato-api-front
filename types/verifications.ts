@@ -3,11 +3,7 @@ import { Organization } from "./organizations";
 import { Addition, QA, Tender } from "./tenders";
 import { User } from "./users";
 
-export type VerificationStatuses =
-  | "unverified"
-  | "in_review"
-  | "declined"
-  | "approved";
+export type VerificationStatuses = "unverified" | "in_review" | "declined" | "approved";
 
 export type TenderVetification = {
   object_type: "tender";
@@ -46,17 +42,9 @@ export type Verification = {
   reviewed_at?: string;
 } & VerificationType;
 
-export type VerificationRequest = BaseRequest<
-  { requestID: number },
-  undefined,
-  undefined
->;
+export type VerificationRequest = BaseRequest<{ requestID: number }, undefined, undefined>;
 
-export type ApproveVerificationRequest = BaseRequest<
-  { requestID: number },
-  undefined,
-  undefined
->;
+export type ApproveVerificationRequest = BaseRequest<{ requestID: number }, undefined, undefined>;
 
 export type DeclineVerificationRequest = BaseRequest<
   { requestID: number },
@@ -86,11 +74,9 @@ export type GetOrganizationVerificationsResponse = Verification[];
 
 export type SendOrganizationVerificationRequest = BaseRequest<
   { organizationID: number },
+  undefined,
   {
-    egrul: string;
-    company_card: string;
-    authority_proof: string;
-    company_constitution: string;
-  },
-  undefined
+    name: strung;
+    url: string;
+  }[]
 >;
