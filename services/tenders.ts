@@ -19,7 +19,6 @@ import {
   SendQARequest,
   GetRespondsResponse,
   RespondsRequest,
-  AdditionsRequest,
   GetAdditionsResponse,
   GetAdditionsRequest,
   SendAdditionsRequest,
@@ -27,37 +26,35 @@ import {
 
 export const apiTenders = {
   getTenders: async function (
-    props: GetTendersRequest,
+    props: GetTendersRequest
   ): Promise<AxiosResponse<BaseTableResponse<GetTendersResponse>>> {
     return api.get("/tenders", { params: props.params });
   },
 
   createTender: async function (
-    props: CreateTenderRequest,
+    props: CreateTenderRequest
   ): Promise<AxiosResponse<BaseResponse<CreateTenderResponse>>> {
     return api.post("/tenders", props.body);
   },
 
   getTender: async function (
-    props: GetTenderRequest,
+    props: GetTenderRequest
   ): Promise<AxiosResponse<BaseResponse<GetTenderResponse>>> {
     return api.get(`/tenders/${props.query.tenderID}`);
   },
 
   updateTender: async function (
-    props: UpdateTenderRequest,
+    props: UpdateTenderRequest
   ): Promise<AxiosResponse<BaseResponse<UpdateTenderResponse>>> {
     return api.put(`/tenders/${props.query.tenderID}`, props.body);
   },
 
-  sendComment: async function (
-    props: SendCommentRequest,
-  ): Promise<AxiosResponse> {
+  sendComment: async function (props: SendCommentRequest): Promise<AxiosResponse> {
     return api.post(`/tenders/${props.query.tenderID}/comments`, props.body);
   },
 
   getComments: async function (
-    props: GetCommentsRequest,
+    props: GetCommentsRequest
   ): Promise<AxiosResponse<BaseResponse<GetCommentsResponse>>> {
     return api.get(`/tenders/${props.query.tenderID}/comments`, props.body);
   },
@@ -67,19 +64,17 @@ export const apiTenders = {
   },
 
   getResponds: async function (
-    props: RespondsRequest,
+    props: RespondsRequest
   ): Promise<AxiosResponse<BaseTableResponse<GetRespondsResponse>>> {
     return api.get(`/tenders/${props.query.tenderID}/respond`, props.body);
   },
 
-  sendAdditions: async function (
-    props: SendAdditionsRequest,
-  ): Promise<AxiosResponse> {
+  sendAdditions: async function (props: SendAdditionsRequest): Promise<AxiosResponse> {
     return api.post(`/tenders/${props.query.tenderID}/additions`, props.body);
   },
 
   getAdditions: async function (
-    props: GetAdditionsRequest,
+    props: GetAdditionsRequest
   ): Promise<AxiosResponse<BaseResponse<GetAdditionsResponse>>> {
     return api.get(`/tenders/${props.query.tenderID}/additions`);
   },
@@ -88,9 +83,7 @@ export const apiTenders = {
     return api.post(`/tenders/${props.query.tenderID}/question-answer`);
   },
 
-  getQA: async function (
-    props: GetQARequest,
-  ): Promise<AxiosResponse<BaseResponse<GetQAResponse>>> {
+  getQA: async function (props: GetQARequest): Promise<AxiosResponse<BaseResponse<GetQAResponse>>> {
     return api.get(`/tenders/${props.query.tenderID}/question-answer`);
   },
 };

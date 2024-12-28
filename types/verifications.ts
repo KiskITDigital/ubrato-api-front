@@ -76,7 +76,7 @@ export type SendOrganizationVerificationRequest = BaseRequest<
   { organizationID: number },
   undefined,
   {
-    name: strung;
+    name: string;
     url: string;
   }[]
 >;
