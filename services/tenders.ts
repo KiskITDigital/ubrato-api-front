@@ -21,6 +21,8 @@ import {
   RespondsRequest,
   AdditionsRequest,
   GetAdditionsResponse,
+  GetAdditionsRequest,
+  SendAdditionsRequest,
 } from "../types/tenders";
 
 export const apiTenders = {
